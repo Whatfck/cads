@@ -1,43 +1,60 @@
+import { Plane, Tag } from "lucide-react";
+
 export default function LayoutPractica() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="flex flex-row gap-8 w-full justify-center items-center">
         
-        {/* CARD 1: Imagen de fondo con BLUR DEGRADADO */}
-        <div className="relative w-[30%] aspect-[9/16] rounded-[40px] overflow-hidden shadow-md group border-[7px] border-white">
+        {/* CARD 1*/}
+        <div className="relative w-[30%] aspect-[10/16] rounded-[40px] overflow-hidden shadow-md group border-[7px] border-white">
           <img 
             src="https://picsum.photos/seed/img1/600/800" 
             alt="Fondo" 
             className="absolute inset-0 w-full h-full object-cover"
           />
-
-          {/* CAPA DE BLUR CON DEGRADADO (MÁSCARA) */}
-          {/* h-[60%] define hasta donde sube el efecto */}
-          {/* [mask-image:...] hace que el blur se desvanezca de abajo hacia arriba */}
-          <div className="absolute inset-x-0 bottom-0 h-[60%] backdrop-blur-md bg-gradient-to-t from-black/50 to-transparent [mask-image:linear-gradient(to_top,black_20%,transparent_100%)]">
-          </div>
-
-          {/* Contenedor de texto */}
+          <div className="absolute inset-x-0 bottom-0 h-[40%] backdrop-blur-[2px] bg-gradient-to-t from-black/80 to-transparent"></div>
           <div className="relative h-full flex flex-col justify-end p-8 text-white">
-            <h3 className="text-2xl font-black tracking-tighter">NEW YORK</h3>
-            <p className="text-sm font-semibold opacity-90 mt-1 uppercase tracking-widest">Economy</p>
-            <p className="text-sm font-semibold opacity-90 mt-1 uppercase tracking-widest">From 120</p>
-            <p className="text-sm font-medium opacity-100 mt-2 bg-white/20 w-fit px-3 py-1 rounded-full backdrop-blur-sm">search flight
+            <h3 className="text-2xl font-black">NEW YORK</h3>
+            <p className="text-xs font-semibold opacity-50 mt-0 uppercase tracking-widest">Economy</p>
+            <p className="text-xs font-semibold mt-3 uppercase tracking-widest flex items-center gap-1">
+              <span className="flex items-center gap-1">
+                <Tag className="w-4 h-4 opacity-50" />
+                from
+              </span>
+              <span>$120</span>
+              <span className="opacity-50 flex items-center gap-1">
+                <Plane className="w-4 h-4 ml-4" />
+              </span>
+              <span>JFK</span>
             </p>
+            <p className="text-xs text-black text-center font-bold mt-4 bg-white py-3 rounded-full flex items-center justify-center">Search flight</p>
           </div>
         </div>
 
-        {/* CARD 2: Sin blur (Original) */}
-        <div className="flex flex-col bg-white border border-gray-200 shadow-md rounded-[30px] w-[30%] aspect-[9/16] overflow-hidden">
-          <div className="h-[70%] bg-gray-300 flex items-center justify-center w-full">
-            <span className="text-gray-500 font-medium">Imagen 2</span>
-          </div>
-          <div className="p-6 flex flex-col justify-center flex-1">
-            <h3 className="text-xl font-bold text-gray-800">Card Normal</h3>
-            <p className="text-sm text-gray-600 mt-2">Descripción estándar.</p>
+        {/* CARD 2 */}
+        <div className="relative w-[30%] aspect-[10/16] rounded-[40px] overflow-hidden shadow-md group border-[7px] border-white bg-white">
+          <img 
+            src="https://picsum.photos/seed/img2/600/800" 
+            alt="Fondo" 
+            className="absolute top-0 left-0 w-full aspect-square object-cover rounded-[40px]"
+          />
+          <div className="relative h-full flex flex-col justify-end p-8 text-black">
+            <h3 className="text-xl font-black">SAN FRANCISCO</h3>
+            <p className="text-xs font-semibold opacity-50 mt-0 uppercase tracking-widest">Premium economy</p>
+            <p className="text-xs font-semibold mt-3 uppercase tracking-widest flex items-center gap-1">
+              <span className="flex items-center gap-1">
+                <Tag className="w-4 h-4 opacity-50" />
+                from
+              </span>
+              <span>$240</span>
+              <span className="opacity-50 flex items-center gap-1">
+                <Plane className="w-4 h-4 ml-4" />
+              </span>
+              <span>SFO</span>
+            </p>
+            <p className="text-xs text-white text-center font-bold mt-4 bg-black py-3 rounded-full flex items-center justify-center">Search flight</p>
           </div>
         </div>
-
       </div>
     </div>
   );
